@@ -10,17 +10,12 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-
-    <!-- Styles / Scripts -->
-    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @else
-        <style>
-        </style>
-    @endif
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
 <body>
+    @include('partials.header')
+    
     <a href="/register" class="btn btn-secondary">Register</a>
     <a href="/login" class="btn btn-secondary">Login</a>
     <a href="{{ route('logout') }}"
@@ -30,8 +25,10 @@
         @csrf
     </form>
     @if(Auth::user())
-        <p>Connecté</p>
+        <p>Connecté en tant que : {{ Auth::user()->name }}</p>
     @else
         <p>Déconnecté</p>
     @endif
+
+    @include('partials.footer')
 </body>

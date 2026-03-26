@@ -4,15 +4,22 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Attributes\Table;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Concerns\HasTimestamps;
 
 #[Table('posts')]
 class Post extends Model
 {
-    protected $fillable = ['title', 'content', 'user_id'];
+    use HasTimestamps;
+    protected $fillable = ['title', 'contenu', 'user_id'];
 
     // protected $casts = [
     //     'created_at' => 'datetime'
     // ];
 
-    
+    // Exemple de méthode de Model
+    public function auteur()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }
