@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Nouveau post</title>
+    <title>Présentation</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -15,5 +15,7 @@
 </head>
 <body>
     <h3>Présentation</h3>
-    <p>Présentation</p>
+    <p>Je suis Nathan Cava-Lonchamp, un aspirant développeur.</p>
+    <!-- photo ici -->
+
 </body>

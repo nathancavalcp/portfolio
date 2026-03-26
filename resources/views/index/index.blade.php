@@ -29,6 +29,10 @@
     @else
         <p>Déconnecté</p>
     @endif
-
+    <p>Bienvenue sur mon portfolio !</p>
+    <p>Ce site permet de me présenter et de faire une liste de mes compétences & projets.</p>
+    
+    <!--Faire en sorte de pouvoir télécharger le CV ici-->
+    
     @include('partials.footer')
 </body>
