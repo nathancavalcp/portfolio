@@ -16,14 +16,6 @@
 <body>
     @include('partials.header')
     
-    <a href="/register" class="btn btn-secondary">Register</a>
-    <a href="/login" class="btn btn-secondary">Login</a>
-    <a href="{{ route('logout') }}"
-        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-        @csrf
-    </form>
     @if(Auth::user())
         <p>Connecté en tant que : {{ Auth::user()->name }}</p>
     @else
@@ -32,7 +24,8 @@
     <p>Bienvenue sur mon portfolio !</p>
     <p>Ce site permet de me présenter et de faire une liste de mes compétences & projets.</p>
     
-    <!--Faire en sorte de pouvoir télécharger le CV ici-->
-    
+    <!--NOTE : l'attribut download est incompatible avec Internet Explorer-->
+    <a href="{{  asset('/docs/CV_Nathan_Cava.pdf') }}" download="CV_Nathan_Cava">Télécharger le CV</a>
+
     @include('partials.footer')
 </body>

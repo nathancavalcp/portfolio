@@ -7,6 +7,7 @@ use DateTime;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Auth;
 
 
 class BlogController extends Controller
@@ -17,10 +18,13 @@ class BlogController extends Controller
      */
     public function index()
     {
-        // Insérer logique pour récupérer les posts du blog
-        // Les faire ensuite passer dans la vue
-        $posts = Post::all();
-        return view('blog.index', ['posts' => $posts]);
+        if (Auth::user()) {
+            $posts = Post::all();
+            return view('blog.index', ['posts' => $posts]);
+        } else {
+            return view('auth.login');
+        }
+        
     }
 
     /**

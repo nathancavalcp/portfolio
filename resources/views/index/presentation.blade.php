@@ -17,5 +17,5 @@
     <h3>Présentation</h3>
     <p>Je suis Nathan Cava-Lonchamp, un aspirant développeur.</p>
     <!-- photo ici -->
-
+    <img src="{{ asset('/img/photo.jpeg') }}" alt="Photo">
 </body>
