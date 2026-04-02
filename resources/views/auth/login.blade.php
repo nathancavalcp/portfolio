@@ -4,7 +4,7 @@
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Inscription</title>
+        <title>Connexion</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -13,6 +13,8 @@
 
 </head>
 <body>
+    @include('partials.header')
+    <br/><br/>
     <h3 class="text-center">Connexion</h3>
     @if ($errors->any())
         <div class="alert alert-danger w-50 mx-auto">
@@ -37,4 +39,6 @@
             <button type="submit" class="btn">Se connecter</button>
         </form>
     </div>
+    <br/><br/><br/>
+    @include('partials.footer')
 </body>

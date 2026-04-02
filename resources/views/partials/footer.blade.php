@@ -1,3 +1,3 @@
 <footer class="footer">
-    <p>TEST FOOTER</p>
+    <p>Nathan Cava-Lonchamp, 2026 - Tous droits réservés.</p>
 </footer>

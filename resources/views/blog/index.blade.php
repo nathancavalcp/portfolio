@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
+    @include('partials.header')
+    <br/><br/>
     <h3>Ceci est un blog</h3>
     @foreach ($posts as $post)
         <div class="post">
@@ -24,4 +26,6 @@
         <br/>
     @endforeach
     <a href="/blog/new">Nouveau post</a>
+    <br/>
+    @include('partials.footer')
 </body>

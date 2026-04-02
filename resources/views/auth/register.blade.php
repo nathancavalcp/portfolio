@@ -13,6 +13,8 @@
 
 </head>
 <body>
+    @include('partials.header')
+    <br/><br/>
     <h3 class="text-center">Inscription</h3>
     @if ($errors->any())
         <div class="alert alert-danger w-50 mx-auto">
@@ -45,4 +47,6 @@
             <button type="submit" class="btn">S'inscrire</button>
         </form>
     </div>
+    <br/>
+    @include('partials.footer')
 </body>

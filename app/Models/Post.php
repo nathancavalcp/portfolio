@@ -12,10 +12,6 @@ class Post extends Model
     use HasTimestamps;
     protected $fillable = ['title', 'contenu', 'user_id'];
 
-    // protected $casts = [
-    //     'created_at' => 'datetime'
-    // ];
-
     // Exemple de méthode de Model
     public function auteur()
     {

@@ -12,19 +12,14 @@ use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
-    
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        if (Auth::user()) {
-            $posts = Post::all();
-            return view('blog.index', ['posts' => $posts]);
-        } else {
-            return view('auth.login');
-        }
-        
+        $posts = Post::all();
+        return view('blog.index', ['posts' => $posts]);
     }
 
     /**
