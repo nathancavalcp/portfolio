@@ -10,8 +10,8 @@ Route::get('/presentation', function() {
     return view('index.presentation');
 });
 
-Route::get('/projets', function() {
-    return view('index.projets');
+Route::get('/competences', function() {
+    return view('index.competences');
 });
 
 require __DIR__.'/api.php';

@@ -42,7 +42,7 @@
                 <label for="password_confirmation">Confirmer le mot de passe</label>
                 <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
             </div>
-            <button type="submit" class="btn btn-primary">S'inscrire</button>
+            <button type="submit" class="btn">S'inscrire</button>
         </form>
     </div>
 </body>
