@@ -17,5 +17,12 @@
             </form>
             <a href="#">Panneau utilisateur</a>
         @endauth
+        @guest
+            <p id="welcome">Déconnecté</p>
+        @endguest
+        @auth
+            <p id="welcome">Bienvenue, {{ Auth::user()->name }}</p>
+        @endauth
     </nav>
+    
 </header>
