@@ -24,31 +24,14 @@
     <h3>Mes soft skills</h3>
     <p style="text-align: center;">Voici les compétences moins techniques qui me définissent :</p>
     <div class="skill-container">
+        @foreach ($skills as $skill)
         <div class="skill">
-            <h4>Organisation</h4>
-            <p>Je suis capable de très bien m'organiser; la gestion et la planification font partie de mes points forts.</p>
+            <h4>{{ $skill->title }}</h4>
+            <p>{{ $skill->description }}</p>
         </div>
-        <div class="skill">
-            <h4>Flexibilité</h4>
-            <p>Je sais m'adapter en fonction de mon environnement de travail et j'assimile vite les concepts nécessaires.</p>
-        </div>
-        <div class="skill">
-            <h4>Créativité</h4>
-            <p>Je mets un point d'honneur à proposer des idées innovantes et à les mettre en place grâce aux moyens de bord.</p>
-        </div>
-        <div class="skill">
-            <h4>Communication</h4>
-            <p>Je sais communiquer efficacement avec mes collègues et peux efficacement travailler en groupe.</p>
-        </div>
-        <div class="skill">
-            <h4>Curiosité</h4>
-            <p>Je suis ouvert à toutes sortes de nouvelles technologies et j'aime apprendre de nouvelles choses pour diversifier mes capacités.</p>
-        </div>
-        <div class="skill">
-            <h4>Autonomie</h4>
-            <p>Je sais travailler de manière autonome et je suis capable de prendre des décisions importantes.</p>
-        </div>
+        @endforeach
     </div>
     <br/><br/>
     @include('partials.footer')
 </body>
+</html>

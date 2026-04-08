@@ -1,13 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Skill;
 
 Route::get('/', function () {
     return view('index.index');
 });
 
 Route::get('/presentation', function() {
-    return view('index.presentation');
+    $skills = Skill::all();
+    return view('index.presentation', ['skills' => $skills]);
 });
 
 Route::get('/competences', function() {

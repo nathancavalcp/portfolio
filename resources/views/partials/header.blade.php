@@ -7,6 +7,7 @@
         @guest
             <a href="/login">Connexion</a>
             <a href="/register">Inscription</a>
+            <p>Bonjour, invité!</p>
         @endguest
         @auth
             <a href="{{ route('logout') }}"
@@ -16,6 +17,7 @@
                 @csrf
             </form>
             <a href="#">Panneau utilisateur</a>
+            <p>Bonjour, {{ Auth::user()->name }}!</p>
         @endauth
     </nav>
 </header>
