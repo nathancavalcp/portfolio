@@ -23,9 +23,9 @@
     <hr/>
     <h3>Mes soft skills</h3>
     <p style="text-align: center;">Voici les compétences moins techniques qui me définissent :</p>
-    <div class="skill-container">
+    <div class="container skill-container">
         @foreach ($skills as $skill)
-        <div class="skill">
+        <div class="container skill">
             <h4>{{ $skill->title }}</h4>
             <p>{{ $skill->description }}</p>
         </div>

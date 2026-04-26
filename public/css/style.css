@@ -1,39 +1,20 @@
 @font-face {
     font-family: 'MaPolice';
-    src: url('/fonts/KamishirasawaSansTifinagh-lxWWD.ttf') format('truetype');
-    /* src: url('/fonts/JetBrainsMonoNL-Medium.ttf') format('truetype'); */
+    /* src: url('/fonts/KamishirasawaSansTifinagh-lxWWD.ttf') format('truetype'); */
+    src: url('/fonts/JetBrainsMonoNL-Medium.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    /* background-color: rgb(255, 255, 255); */
-    font-family: 'MaPolice', sans-serif;
-    font-size: 20px;
     color: white;
-    background-image: linear-gradient(to bottom right, #0b1763, #3945cc);
-	background-size: 400% 400%;
-    /* color: white;
-    background-image: linear-gradient(to bottom right, #0b1763, #2530ab);
-    background-size: 400% 400%;
-    background-repeat: no-repeat;
-    animation: gradient 10s ease infinite; */
-    background-color: white;
+    background-color: rgb(25, 25, 25);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     font-family: 'MaPolice', sans-serif; 
-    font-size: 20px;   
+    font-size: 15px;   
 }
-
-/* @keyframes gradient {
-    0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-} */
 
 button[type=submit] {
     font-family: 'MaPolice', sans-serif;
@@ -59,16 +40,10 @@ h3 {
 }
 
 .competence {
-    display: flex;
     flex-direction: row;
-    align-items: center;
     gap: 10px;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #2530ab;
     padding: 10px;
-    border-radius: 5px;
     margin-top: 5px;
     margin-bottom: 10px;
 }
@@ -81,6 +56,7 @@ h3 {
 .competence-desc {
     margin-left: auto;
     max-width: 500px;
+    text-align: right;
 }
 
 .container {
@@ -89,22 +65,64 @@ h3 {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    max-width: 600px;
     padding: 5px;
-    background-color: rgb(31, 58, 191);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 2px 1px rgba(255, 255, 255, 0.8);
     border-radius: 5px;
+}
+
+.container::before {
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+.container::after {
+  content: '';
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
 }
 
 .header {
     position: fixed;
+    flex-direction: row;
+    justify-content: space-around;
+    left: auto;
+    right: auto;
+    top: 0;
+    max-width: 1000px;
+    width: 80%;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.row {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    left: 0;
-    top: 0;
-    background-color: rgb(25, 44, 136);
-    width: 100%;
-    padding: 1rem;
+    align-items: center;
 }
 
 .footer {
@@ -112,8 +130,6 @@ h3 {
     width: 100%;
     padding: 20px 0;
     margin: 0;
-    background-color: rgb(25, 44, 136);
-    color: white;
     text-align: center;
 }
 
@@ -124,26 +140,18 @@ h3 {
 }
 
 .skill-container {
-    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-    background-color: #2530ab;
-    width:60%;
+    width: 60%;
     gap: 20px;
 }
 
 .skill {
     width: 25%;
-    background-color: #3c48ce;
-    border-radius: 5px;
     padding: 3px;
     text-align: center;
     display: inline-block;
-    margin:1%;
-    box-shadow: 8px 4px 4px rgb(69, 88, 208);
+    margin: 1%;
+    /* box-shadow: 8px 4px 4px rgb(69, 88, 208); */
 }
 
 main {
@@ -151,7 +159,6 @@ main {
 }
 
 a, button {
-    background-color: rgb(31, 58, 191);
     padding: 5px;
     border: none;
     text-decoration: none;
@@ -161,8 +168,14 @@ a, button {
     transform: scale(1);
 }
 
-a:hover, button:hover {
+button {
     background-color: rgb(16, 34, 123);
+    cursor: pointer;
+}
+
+a:hover, button:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
     /* transform: scale(1.5) perspective(1px) */
 }
 

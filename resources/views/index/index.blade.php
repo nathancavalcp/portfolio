@@ -15,7 +15,6 @@
 
 <body>
     @include('partials.header')
-    <main>
     <br/><br/>
     <div class="index">
     <h2>Bienvenue sur mon portfolio !</h2>
@@ -30,7 +29,11 @@
     @endif
     <!--NOTE : l'attribut download est incompatible avec Internet Explorer-->
     <a href="{{  asset('/docs/CV_Nathan_Cava.pdf') }}" download="CV_Nathan_Cava-Lonchamp">Télécharger le CV</a>
-    <p>test</p>
-    </main>
+    <h3>Présentation</h3>
+    <div class="index">
+        <p>Je suis passionné par l'informatique et le développement web depuis plusieurs années, et j'ai décidé de créer ce portfolio pour partager mes compétences et mes projets avec le monde.</p>
+        <p>J'ai acquis de nombreuses compétences en développement web, notamment en PHP, JavaScript, C, Dart, Flutter et Git. J'ai également travaillé sur plusieurs projets personnels et scolaires qui m'ont permis de mettre en pratique ces compétences.</p>
+        <p>Je suis toujours à la recherche de nouvelles opportunités pour apprendre et grandir en tant que développeur, et je suis ouvert à toute collaboration ou projet intéressant.</p>
+    </div>
     @include('partials.footer')
 </body>
