@@ -8,15 +8,35 @@
 
 body {
     color: white;
-    background-color: rgb(25, 25, 25);
+    background-color: rgb(20, 20, 20);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    font-family: 'MaPolice', sans-serif; 
-    font-size: 15px;   
+    font-family: 'MaPolice', sans-serif;
+    font-size: 15px;
+    size: 100%;
+    min-height: calc(100vh - 40px);
+    background-size: 40px 40px;
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
 
-button[type=submit] {
+html {
+    scroll-behavior: smooth;
+}
+
+label {
+    text-align: center;
+}
+
+section {
+    margin-top: 50px;
+}
+
+button[type=submit],
+textarea,
+input {
     font-family: 'MaPolice', sans-serif;
     font-size: 15px;
 }
@@ -27,16 +47,29 @@ h3 {
     text-align: center;
 }
 
+.name {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20vh;
+    z-index: 4;
+    font-size: 30px;
+}
+
+.name-text {
+    text-shadow: rgba(255, 162, 0, 0.9) 2px 2px 12px;
+    color: rgb(255, 245, 216);
+}
+
 .index {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 80px;
 }
 
 #welcome {
-    margin-right: auto;
+    right: auto;
 }
 
 .competence {
@@ -51,12 +84,22 @@ h3 {
 .competence-logo {
     width: 60px;
     height: 60px;
+
 }
 
 .competence-desc {
     margin-left: auto;
     max-width: 500px;
     text-align: right;
+}
+
+.experience {
+    flex-direction: column;
+    text-align: center;
+    max-width: 800px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
 .container {
@@ -69,44 +112,177 @@ h3 {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
-    inset 0 0 2px 1px rgba(255, 255, 255, 0.8);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 0 2px 1px rgba(255, 255, 255, 0.8);
     border-radius: 5px;
 }
 
 .container::before {
-  content: '';
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.8),
-    transparent
-  );
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.8),
+            transparent);
 }
 
 .container::after {
-  content: '';
-  top: 0;
-  left: 0;
-  width: 1px;
-  height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.8),
-    transparent,
-    rgba(255, 255, 255, 0.3)
-  );
+    content: '';
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.8),
+            transparent,
+            rgba(255, 255, 255, 0.3));
+}
+
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.gradient-sphere {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(35px);
+}
+
+.glow {
+    position: absolute;
+    width: 40vw;
+    height: 40vh;
+    background: radial-gradient(circle, rgba(0, 255, 42, 0.663), transparent 70%);
+    top: 140%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: pulse 8s infinite alternate;
+    filter: blur(30px);
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    100% {
+        opacity: 0.7;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+
+.sphere-1 {
+    width: 15vw;
+    height: 15vw;
+    background: linear-gradient(40deg, rgba(255, 0, 128, 0.8), rgba(255, 102, 0, 0.4));
+    top: 5%;
+    left: 5%;
+    animation: float-1 2s ease-in-out infinite alternate;
+}
+
+.sphere-2 {
+    width: 17vw;
+    height: 17vw;
+    background: linear-gradient(240deg, rgba(72, 0, 255, 0.8), rgba(0, 242, 255, 0.4));
+    bottom: -25%;
+    right: 0%;
+    animation: pulse 4s ease-in-out infinite alternate;
+}
+
+.sphere-3 {
+    width: 15vw;
+    height: 15vw;
+    background: linear-gradient(240deg, rgba(228, 193, 15, 0.8), rgba(232, 163, 2, 0.4));
+    bottom: -100%;
+    right: 15%;
+    animation: float-1 2s ease-in-out infinite alternate;
+}
+
+.sphere-4 {
+    width: 15vw;
+    height: 15vw;
+    background: linear-gradient(240deg, rgba(108, 211, 5, 0.8), rgba(4, 242, 163, 0.4));
+    bottom: -150%;
+    right: 75%;
+    animation: float-1 3s ease-in-out infinite alternate;
+}
+
+@keyframes float-1 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(5%, 5%) scale(1.1);
+    }
+}
+
+@keyframes float-2 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(-10%, -5%) scale(1.15);
+    }
+}
+
+@keyframes float-3 {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: translate(-5%, 10%) scale(1.05);
+        opacity: 0.6;
+    }
+}
+
+.date {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    max-width: 110px;
+    gap: 5px;
+}
+
+.post {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    max-width: 40%;
 }
 
 .header {
+    margin-top: 10px;
     position: fixed;
+    z-index: 5;
     flex-direction: row;
     justify-content: space-around;
     left: auto;
@@ -115,7 +291,12 @@ h3 {
     max-width: 1000px;
     width: 80%;
     border-radius: 5px;
-    padding: 1rem;
+    padding: 0.5rem;
+}
+
+.no-bg {
+    background: none;
+    box-shadow: none;
 }
 
 .row {
@@ -133,49 +314,127 @@ h3 {
     text-align: center;
 }
 
+input,
+textarea {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 0 2px 1px rgba(255, 255, 255, 0.8);
+}
+
 #photo {
     max-width: 250px;
     max-height: 250px;
     border-radius: 8px;
+    margin-right: 10px;
 }
 
 .skill-container {
-    flex-wrap: wrap;
-    width: 60%;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
 }
 
-.skill {
-    width: 25%;
-    padding: 3px;
+.vulkan {
+    margin: auto;
+    display: block;
     text-align: center;
-    display: inline-block;
-    margin: 1%;
-    /* box-shadow: 8px 4px 4px rgb(69, 88, 208); */
+    max-width: 80%;
+}
+
+.tools {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 768px) {
+
+    .skill-container,
+    .tools {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .vulkan,
+    .post {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+
+
+@media (max-width: 480px) {
+    .skill-container {
+        grid-template-columns: 1fr;
+    }
+
+    .tools {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.vulkan, .post {
+    max-width: 100%;
+}
+
+
+.skill {
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+    display: block;
 }
 
 main {
     min-height: calc(100vh - 40px);
 }
 
-a, button {
+a,
+button {
     padding: 5px;
     border: none;
     text-decoration: none;
     color: white;
     border-radius: 5px;
+    z-index: 4;
     transition: all 0.5s ease;
     transform: scale(1);
 }
 
 button {
-    background-color: rgb(16, 34, 123);
+    background-color: rgb(25, 25, 25);
+    border: 1px solid rgb(136, 135, 135);
     cursor: pointer;
 }
 
-a:hover, button:hover {
+a:hover,
+button:hover,
+.icon:hover {
     background-color: rgb(255, 255, 255);
     color: black;
+    fill: black;
     /* transform: scale(1.5) perspective(1px) */
 }
 

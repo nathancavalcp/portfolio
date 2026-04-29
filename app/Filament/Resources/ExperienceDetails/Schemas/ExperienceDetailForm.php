@@ -1,21 +1,22 @@
 <?php
 
-namespace App\Filament\Resources\TechSkillDetails\Schemas;
+namespace App\Filament\Resources\ExperienceDetails\Schemas;
+
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
 
-class TechSkillDetailForm
+class ExperienceDetailForm
 {
     public static function configure(Schema $schema): Schema
     {
         return $schema
             ->schema([
-            Select::make('tech_skill_id')
-                ->label('Tech Skill')
+            Select::make('experience_id')
+                ->label('Experience')
                 ->options(
-                    \App\Models\TechSkill::all()->pluck('title', 'id')
+                    \App\Models\Experience::all()->pluck('title', 'id')
                 )
                 ->required()
                 ->searchable(),

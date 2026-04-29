@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Projets - {{ $tech->title }}</title>
+    <title>Projets - {{ $experience->title }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -16,19 +16,22 @@
 <body>
     @include('partials.header')
     <br/><br/>
-        <h3>{{ $tech->title }}</h3>
-        <p style="text-align: center;">{{ $tech->description }}</p>
-        <br/>
-            @foreach ($tech->projects as $project)
-                <div class="container post" style="padding: 10px;">
+        <h3>{{ $experience->title }}</h3>
+        <p style="text-align: center;">{{ $experience->description }}</p>
+        <br/><br/>
+            @foreach ($experience->projects as $project)
+                <div class="container skill">
                     <h4>{{ $project->title }}</h4>
                     <p>{{ $project->description }}</p>
-                    <a href="{{ asset('./docs/' . $project->pdf_link) }}" target="_blank" style="border: 2px solid white; padding: 5px;">Détails du projet</a>
                 </div>
-                <br/>
+                <br/><br/>
             @endforeach
-            <br/><br/>
-            <script src="{{ asset('/js/particles.js') }}"></script>
+        <br/><br/>
+        <div style="display: flex; justify-content: center;">
+        <a href="{{ asset ('./docs/' . $project->pdf_link) }}" target="_blank" style="border: 2px solid white; padding: 5px;">Rapport de stage</a>
+        </div>
+        <br/><br/>
+        <script src="{{ asset('/js/particles.js') }}"></script>
     @include('partials.footer')
 </body>
 </html>

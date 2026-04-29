@@ -25,16 +25,22 @@
         </div>
     @endif
     <br/>
-    <form action="/blog/new" method="POST" class="w-50 mx-auto">
-        <div class="form-group">
-            <label for="title">Titre</label>
-            <input type="text" class="form-control" id="title" name="title" required>
-        </div>
-        <div class="form-group">
-            <label for="contenu">Contenu</label>
-            <input type="text" class="form-control" id="contenu" name="contenu" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Poster</button>
-    </form>
+    <div class="container form">
+        <form action="/blog/new" method="POST">
+            @csrf
+            <div class="form-group">
+                <label for="title">Titre</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="contenu">Contenu</label>
+                <textarea class="form-control" id="contenu" name="contenu" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Poster</button>
+        </form>
+    </div>
     <a href="/blog">Retour au blog</a>
+    <script src="{{ asset('/js/particles.js') }}"></script>
+    @include('partials.footer')
 </body>
+</html>

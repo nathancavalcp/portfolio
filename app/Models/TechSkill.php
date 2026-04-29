@@ -11,4 +11,9 @@ class TechSkill extends Model
     use HasFactory;
 
     protected $fillable = ['title', 'description', 'icon'];
+
+    public function projects()
+    {
+        return $this->hasMany(TechSkillDetail::class);
+    }
 }
